@@ -1,9 +1,9 @@
-<link href="style.css" rel="stylesheet" type="text/css">
-<? php
+<?php
 
 session_start();
 
-if(isset($_SESSION[account_loggedin])){
+//if the user is already logged in, just go home
+if(isset($_SESSION['account_loggedin'])){
     header('Location: home.php');
     exit;
 }
@@ -14,6 +14,7 @@ if(isset($_SESSION[account_loggedin])){
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,minimum-scale=1">
+        <link href="style.css" rel="stylesheet" type="text/css">
         <title>Login</title>
     </head>
 
@@ -22,7 +23,7 @@ if(isset($_SESSION[account_loggedin])){
 
             <h1>Member Login</h1>
 
-            <form action="authenticate.php" method="post" class="form login-form">
+            <form action="authentication.php" method="post" class="form login-form">
 
                 <label class="form-label" for="username">Username</label>
                 <div class="form-group">
